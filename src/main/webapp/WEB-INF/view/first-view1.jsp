@@ -5,7 +5,7 @@
 
 <h2>Hello MVC world!</h2>
 
-<a href="askDetails">enter name</a>
+<a href="/spring_course_mvc/employee1/askDetails">enter details</a>
 
 </body>
 

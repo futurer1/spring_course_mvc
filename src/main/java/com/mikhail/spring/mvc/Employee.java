@@ -1,12 +1,20 @@
 package com.mikhail.spring.mvc;
 
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Employee {
+
+    @Size(min = 2, message = "name length must be more than 2 symbols")
     private String name;
 
+    //@NotEmpty(message = "surname is empty")
+    @NotBlank(message = "surname is empty")
     private String surname;
 
     private int salary;
@@ -18,6 +26,10 @@ public class Employee {
 
     private Map<String, String> carBrands;
 
+    private String[] languages;
+
+    private Map<String, String> languagesList;
+
     public Employee() {
         departments = new HashMap<>();
         departments.put("Information Technology", "IT");
@@ -28,6 +40,11 @@ public class Employee {
         carBrands.put("Geely Coolray", "Geely");
         carBrands.put("Haval H9", "Haval");
         carBrands.put("Dongfeng J", "Dongfeng");
+
+        languagesList = new HashMap<>();
+        languagesList.put("English", "EN");
+        languagesList.put("Deutch", "DE");
+        languagesList.put("French", "FR");
     }
 
     public String getName() {
@@ -84,6 +101,22 @@ public class Employee {
 
     public void setCarBrands(Map<String, String> carBrands) {
         this.carBrands = carBrands;
+    }
+
+    public String[] getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(String[] languages) {
+        this.languages = languages;
+    }
+
+    public Map<String, String> getLanguagesList() {
+        return languagesList;
+    }
+
+    public void setLanguagesList(Map<String, String> languagesList) {
+        this.languagesList = languagesList;
     }
 
     @Override

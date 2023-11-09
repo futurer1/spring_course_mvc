@@ -9,8 +9,12 @@
 <%--@elvariable id="employee" type="com.mikhail.spring.mvc.Employee"--%>
 <form:form action="showDetails" modelAttribute="employee">
     
-    Name <form:input path="name"/><br>
-    Surname <form:input path="surname"/><br>
+    Name <form:input path="name"/>
+    <form:errors path="name"/> <!-- вывод информации с ошибкой валидации -->
+    <br>
+    Surname <form:input path="surname"/>
+    <form:errors path="surname"/>
+    <br>
     Salary <form:input path="salary"/><br>
     Department <form:select path="department">
 <%--        Вариант хардкода: --%>
@@ -30,6 +34,14 @@
         <form:radiobuttons path="carBrand" items="${employee.carBrands}" />
     <br>
 
+<%--    EN <form:checkbox path="languages" value="English"/>--%>
+<%--    DE <form:checkbox path="languages" value="Deutch"/>--%>
+<%--    FR <form:checkbox path="languages" value="French"/>--%>
+
+<%--        То же самое, но из HashMap объекта Employee--%>
+        <form:checkboxes path="languages" items="${employee.languagesList}"/>
+
+    <br>
     <input type="submit" value="ok"/>
 
 </form:form>
