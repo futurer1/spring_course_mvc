@@ -1,10 +1,7 @@
 package com.mikhail.spring.mvc;
 
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,6 +14,8 @@ public class Employee {
     @NotBlank(message = "surname is empty")
     private String surname;
 
+    @Min(value = 500, message = "must be >= than 500")
+    @Max(value = 1000, message = "must be <= than 1000")
     private int salary;
 
     private String department;
@@ -29,6 +28,9 @@ public class Employee {
     private String[] languages;
 
     private Map<String, String> languagesList;
+
+    @Pattern(regexp = "\\d{3}-\\d{2}-\\d{2}", message = "Phone is incorrect. Pattern: XXX-XX-XX")
+    private String phoneNumber;
 
     public Employee() {
         departments = new HashMap<>();
@@ -117,6 +119,14 @@ public class Employee {
 
     public void setLanguagesList(Map<String, String> languagesList) {
         this.languagesList = languagesList;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
