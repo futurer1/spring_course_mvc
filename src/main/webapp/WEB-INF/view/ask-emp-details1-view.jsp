@@ -21,6 +21,14 @@
 <%--        То же самое, но из HashMap объекта Employee --%>
         <form:options items="${employee.departments}"/>
     </form:select>
+    <br>
+<%--    Geely <form:radiobutton path="carBrand" value="Geely Coolray"/>--%>
+<%--    Haval <form:radiobutton path="carBrand" value="Haval H9"/>--%>
+<%--    Dongfeng <form:radiobutton path="carBrand" value="Dongfeng J"/>--%>
+
+<%--        То же самое, но из HashMap объекта Employee--%>
+        <form:radiobuttons path="carBrand" items="${employee.carBrands}" />
+    <br>
 
     <input type="submit" value="ok"/>
 
