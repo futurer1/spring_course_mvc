@@ -1,3 +1,4 @@
+<jsp:useBean id="employee" scope="request" type="com.mikhail.spring.mvc.Employee"/>
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +10,7 @@
 <p>Your name: ${employee.name}</p><%--срабатывают геттеры--%>
 <p>Your surname: ${employee.surname}</p>
 <p>Your salary: ${employee.salary}</p>
+<p>Your department: ${employee.department}</p>
 
 </body>
 
