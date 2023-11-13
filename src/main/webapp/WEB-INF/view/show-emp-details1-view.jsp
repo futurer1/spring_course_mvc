@@ -19,6 +19,7 @@
     </c:forEach>
 </ul></p>
 <p>Your phone number: ${employee.phoneNumber}</p>
+<p>Your email: ${employee.email}</p>
 
 </body>
 
