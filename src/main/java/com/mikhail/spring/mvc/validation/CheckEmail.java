@@ -9,7 +9,7 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = CheckEmailValidator.class)
+@Constraint(validatedBy = CheckEmailValidator.class) // указан класс, который будет валидировать
 public @interface CheckEmail {
     // аннотация для кастомной валидации email
 
